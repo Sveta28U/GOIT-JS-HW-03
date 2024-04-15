@@ -1,5 +1,12 @@
-function makeArray(firstArray, secondArray, maxLength) {}
-const nameArr = firstArray.cocat();
+function makeArray(firstArray, secondArray, maxLength) {
+  const newArr = firstArray.concat(secondArray);
+  if (maxLength < newArr.length) {
+    let array = newArr.slice(0, maxLength);
+    return array;
+  }
+  return newArr;
+}
+
 console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)); // ["Mango", "Poly", "Ajax"]
 console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4)); // ["Mango", "Poly", "Houston", "Ajax"]
 console.log(makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3)); // ["Mango", "Ajax", "Chelsea"]
